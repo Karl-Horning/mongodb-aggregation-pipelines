@@ -1,43 +1,109 @@
-# MongoDB Aggregation Pipelines
+# 🍃 MongoDB Aggregation Pipelines
 
-This repository contains scripts to seed MongoDB collections and perform aggregations using MongoDB's Node.js Driver.
+---
 
-## Seed Data
+## 📋 Table of Contents
 
-The `create` folder contains scripts to seed MongoDB collections. These scripts utilize the `db.createCollection()` command to create collections in the specified database. Each script is structured to create a collection with customizable options, such as capped collections, validation rules, and time series configurations.
+- [🍃 MongoDB Aggregation Pipelines](#-mongodb-aggregation-pipelines)
+  - [📋 Table of Contents](#-table-of-contents)
+  - [🤓 Overview](#-overview)
+  - [📁 Project structure](#-project-structure)
+  - [📦 Installation](#-installation)
+  - [🚀 Usage](#-usage)
+    - [📌 Seeding collections](#-seeding-collections)
+    - [🔍 Running aggregations](#-running-aggregations)
+  - [📚 Dependencies](#-dependencies)
+  - [📌 To Do](#-to-do)
+  - [🙋 FAQ](#-faq)
+  - [📄 Licence](#-licence)
+  - [👤 Author](#-author)
 
-### Usage
+---
 
-To use the seed scripts:
+## 🤓 Overview
 
-1. Open the desired script in a MongoDB environment.
-2. Modify the `database` and `collection` variables to specify the target database and collection name.
-3. Execute the script to create the collection with the specified options.
+This project includes example scripts for working with MongoDB collections using the MongoDB Node.js Driver. It covers both collection creation (including advanced options like capped and time series collections) and aggregation pipelines written in JavaScript.
 
-For more information on the `createCollection` command, refer to the [MongoDB Documentation](https://www.mongodb.com/docs/manual/reference/method/db.createCollection/).
+---
 
-## Aggregations
+## 📁 Project structure
 
-The `aggregations` folder contains scripts to perform aggregations on MongoDB collections. These scripts utilize the MongoDB Node.js Driver to connect to a MongoDB instance, execute aggregation pipelines, and retrieve results.
+```text
+/
+├── aggregations/        # Scripts using aggregation pipelines with Node.js
+│   └── *.js
+├── create/              # Scripts to create collections using db.createCollection()
+│   └── *.js
+```
 
-### Usage
+---
 
-To use the aggregation scripts:
+## 📦 Installation
 
-1. Open the desired script in a Node.js environment.
-2. Ensure the MongoDB Node.js Driver is installed.
-3. Modify the aggregation pipeline (`agg`) to define the desired aggregation operations.
-4. Update the MongoDB connection string to point to your MongoDB instance.
-5. Execute the script to perform the aggregation and retrieve the results.
+Install the MongoDB Node.js Driver if not already installed:
 
-### Dependencies
+```bash
+npm install mongodb
+```
 
-- MongoDB Node.js Driver: [MongoDB Node.js Driver Documentation](https://mongodb.github.io/node-mongodb-native)
+---
 
-## Contact
+## 🚀 Usage
 
-For any inquiries or support related to this project, please contact Karl Horning.
+### 📌 Seeding collections
 
-## Author
+1. Open a script in the `create/` folder.
+2. Update the `database` and `collection` names as needed.
+3. Run the script in a MongoDB shell or through a Node.js environment that supports direct MongoDB shell commands.
 
-Karl Horning: [GitHub](https://github.com/Karl-Horning/) | [LinkedIn](https://www.linkedin.com/in/karl-horning/) | [CodePen](https://codepen.io/karlhorning)
+📖 Refer to the [MongoDB `createCollection()` docs](https://www.mongodb.com/docs/manual/reference/method/db.createCollection/) for further customisation.
+
+---
+
+### 🔍 Running aggregations
+
+1. Open a script in the `aggregations/` folder.
+2. Ensure your MongoDB connection string is set correctly.
+3. Edit the `agg` variable to define your aggregation pipeline.
+4. Run the script using Node.js:
+
+```bash
+node aggregations/example.js
+```
+
+---
+
+## 📚 Dependencies
+
+- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native)
+
+---
+
+## 📌 To Do
+
+- [ ] Add `.env` support for connection strings
+- [ ] Include example output or test data
+- [ ] Add pipelines for `$facet`, `$graphLookup`, and `$lookup` examples
+- [ ] Add performance profiling notes
+
+---
+
+## 🙋 FAQ
+
+**Q: Can I use this with Atlas or a remote MongoDB instance?**
+A: Yes. Update the connection string to use your remote URI.
+
+**Q: Are the scripts safe to run in production?**
+A: They're educational examples and should be reviewed before any production use.
+
+---
+
+## 📄 Licence
+
+MIT © Karl Horning
+
+---
+
+## 👤 Author
+
+Made with ❤️ by [Karl Horning](https://github.com/Karl-Horning)
