@@ -1,32 +1,32 @@
-# 🍃 MongoDB Aggregation Pipelines
+# MongoDB Aggregation Pipelines
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
-- [🍃 MongoDB Aggregation Pipelines](#-mongodb-aggregation-pipelines)
-  - [📋 Table of Contents](#-table-of-contents)
-  - [🤓 Overview](#-overview)
-  - [📁 Project structure](#-project-structure)
-  - [📦 Installation](#-installation)
-  - [🚀 Usage](#-usage)
-    - [📌 Seeding collections](#-seeding-collections)
-    - [🔍 Running aggregations](#-running-aggregations)
-  - [📚 Dependencies](#-dependencies)
-  - [📌 To Do](#-to-do)
-  - [🙋 FAQ](#-faq)
-  - [📄 Licence](#-licence)
-  - [👤 Author](#-author)
+- [MongoDB Aggregation Pipelines](#mongodb-aggregation-pipelines)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Project structure](#project-structure)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Seeding collections](#seeding-collections)
+    - [Running aggregations](#running-aggregations)
+  - [Dependencies](#dependencies)
+  - [To Do](#to-do)
+  - [FAQ](#faq)
+  - [Licence](#licence)
+  - [Author](#author)
 
 ---
 
-## 🤓 Overview
+## Overview
 
 This project includes example scripts for working with MongoDB collections using the MongoDB Node.js Driver. It covers both collection creation (including advanced options like capped and time series collections) and aggregation pipelines written in JavaScript.
 
 ---
 
-## 📁 Project structure
+## Project structure
 
 ```text
 /
@@ -38,7 +38,7 @@ This project includes example scripts for working with MongoDB collections using
 
 ---
 
-## 📦 Installation
+## Installation
 
 Install the MongoDB Node.js Driver if not already installed:
 
@@ -48,19 +48,19 @@ npm install mongodb
 
 ---
 
-## 🚀 Usage
+## Usage
 
-### 📌 Seeding collections
+### Seeding collections
 
 1. Open a script in the `create/` folder.
 2. Update the `database` and `collection` names as needed.
 3. Run the script in a MongoDB shell or through a Node.js environment that supports direct MongoDB shell commands.
 
-📖 Refer to the [MongoDB `createCollection()` docs](https://www.mongodb.com/docs/manual/reference/method/db.createCollection/) for further customisation.
+Refer to the [MongoDB `createCollection()` docs](https://www.mongodb.com/docs/manual/reference/method/db.createCollection/) for further customisation.
 
 ---
 
-### 🔍 Running aggregations
+### Running aggregations
 
 1. Open a script in the `aggregations/` folder.
 2. Ensure your MongoDB connection string is set correctly.
@@ -73,13 +73,13 @@ node aggregations/example.js
 
 ---
 
-## 📚 Dependencies
+## Dependencies
 
 - [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native)
 
 ---
 
-## 📌 To Do
+## To Do
 
 - [ ] Add `.env` support for connection strings
 - [ ] Include example output or test data
@@ -88,7 +88,7 @@ node aggregations/example.js
 
 ---
 
-## 🙋 FAQ
+## FAQ
 
 **Q: Can I use this with Atlas or a remote MongoDB instance?**
 A: Yes. Update the connection string to use your remote URI.
@@ -98,12 +98,12 @@ A: They're educational examples and should be reviewed before any production use
 
 ---
 
-## 📄 Licence
+## Licence
 
 MIT © Karl Horning
 
 ---
 
-## 👤 Author
+## Author
 
 Made with ❤️ by [Karl Horning](https://github.com/Karl-Horning)
