@@ -1,91 +1,66 @@
-# MongoDB Aggregation Pipelines
+# MongoDB aggregation pipelines
 
-## Table of Contents
+At a previous role, reporting ran against a replica database rather than production. Extracting meaningful stats from it meant writing aggregation pipelines — something I hadn't needed before, having worked primarily with SQL. I built this repo to get comfortable with the syntax and semantics before applying it in a live context.
 
-- [Overview](#overview)
-- [Project structure](#project-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Seeding collections](#seeding-collections)
-  - [Running aggregations](#running-aggregations)
-- [Dependencies](#dependencies)
-- [To Do](#to-do)
-- [FAQ](#faq)
-- [Licence](#licence)
-- [Author](#author)
+The scripts cover a range of pipeline stages — `$match`, `$group`, `$sort`, `$limit`, `$project`, `$lookup`, `$addFields`, `$unwind`, and `$count` — across a `users` collection and a `books` collection with a related `authors` collection to demonstrate joins via `$lookup`.
 
-## Overview
+## Prerequisites
 
-This project includes example scripts for working with MongoDB collections using the MongoDB Node.js Driver. It covers both collection creation (including advanced options like capped and time series collections) and aggregation pipelines written in JavaScript.
+- [Node.js](https://nodejs.org/)
+- [MongoDB](https://www.mongodb.com/try/download/community) running locally, or a connection string for a remote or Atlas instance
+- [MongoDB for VS Code](https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode) or [MongoDB Compass](https://www.mongodb.com/products/compass) to run the setup scripts
+
+## Setup
+
+1. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+2. Copy the example environment file:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Update `MONGODB_URI` in `.env` if you're not running MongoDB locally on the default port.
+
+3. Connect to your MongoDB instance in MongoDB Compass or the VS Code MongoDB extension using the connection string from your `.env` file.
+
+4. Open each script in `mongo/setup/` and run them in this order:
+
+   1. `users-create-collection.mongodb.js`
+   2. `users-insertMany.mongodb.js`
+   3. `books-create-collection.mongodb.js`
+   4. `books-insertMany.mongodb.js`
+   5. `authors-create-collection.mongodb.js`
+   6. `authors-insertMany.mongodb.js`
+
+
+## Running an aggregation
+
+```bash
+node mongo/aggregations/<script-name>.js
+```
+
+For example:
+
+```bash
+node mongo/aggregations/avgUserAge.js
+```
 
 ## Project structure
 
 ```text
 /
-├── aggregations/        # Scripts using aggregation pipelines with Node.js
-│   └── *.js
-├── create/              # Scripts to create collections using db.createCollection()
-│   └── *.js
+├── mongo/
+│   ├── aggregations/    # Aggregation pipeline scripts (Node.js Driver)
+│   └── setup/           # Collection creation and seed data (MongoDB Playground)
+├── .env.example
+└── package.json
 ```
-
-## Installation
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Copy the example environment file and update it with your connection string:
-
-```bash
-cp .env.example .env
-```
-
-## Usage
-
-### Seeding collections
-
-1. Open a script in the `create/` folder.
-2. Update the `database` and `collection` names as needed.
-3. Run the script in a MongoDB shell or through a Node.js environment that supports direct MongoDB shell commands.
-
-Refer to the [MongoDB `createCollection()` docs](https://www.mongodb.com/docs/manual/reference/method/db.createCollection/) for further customisation.
-
-### Running aggregations
-
-1. Open a script in the `aggregations/` folder.
-2. Ensure your MongoDB connection string is set correctly.
-3. Edit the `agg` variable to define your aggregation pipeline.
-4. Run the script using Node.js:
-
-```bash
-node aggregations/example.js
-```
-
-## Dependencies
-
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native)
-
-## To Do
-
-- [x] Add `.env` support for connection strings
-- [ ] Include example output or test data
-- [ ] Add pipelines for `$facet`, `$graphLookup`, and `$lookup` examples
-- [ ] Add performance profiling notes
-
-## FAQ
-
-**Q: Can I use this with Atlas or a remote MongoDB instance?**
-A: Yes. Update the connection string to use your remote URI.
-
-**Q: Are the scripts safe to run in production?**
-A: They're educational examples and should be reviewed before any production use.
 
 ## Licence
 
-MIT © Karl Horning
-
-## Author
-
-Made with ❤️ by [Karl Horning](https://github.com/Karl-Horning)
+MIT 2024 © [Karl Horning](https://github.com/Karl-Horning)
