@@ -4,6 +4,9 @@
     "description": "Example scripts for working with MongoDB collections and aggregation pipelines using the MongoDB Node.js Driver.",
     "type": "module",
     "license": "MIT",
+    "scripts": {
+        "seed": "node scripts/seed.js"
+    },
     "dependencies": {
         "dotenv": "^16.0.0",
         "mongodb": "^6.0.0"
