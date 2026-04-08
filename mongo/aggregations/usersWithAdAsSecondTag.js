@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { MongoClient } from "mongodb";
 
 /*
@@ -16,7 +17,7 @@ const agg = [
     },
 ];
 
-const client = await MongoClient.connect("mongodb://localhost:27017/");
+const client = await MongoClient.connect(process.env.MONGODB_URI);
 const coll = client.db("testData").collection("users");
 const cursor = coll.aggregate(agg);
 const result = await cursor.toArray();

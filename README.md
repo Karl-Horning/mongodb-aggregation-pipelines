@@ -1,30 +1,22 @@
 # MongoDB Aggregation Pipelines
 
----
-
 ## Table of Contents
 
-- [MongoDB Aggregation Pipelines](#mongodb-aggregation-pipelines)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Project structure](#project-structure)
-  - [Installation](#installation)
-  - [Usage](#usage)
-    - [Seeding collections](#seeding-collections)
-    - [Running aggregations](#running-aggregations)
-  - [Dependencies](#dependencies)
-  - [To Do](#to-do)
-  - [FAQ](#faq)
-  - [Licence](#licence)
-  - [Author](#author)
-
----
+- [Overview](#overview)
+- [Project structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Seeding collections](#seeding-collections)
+  - [Running aggregations](#running-aggregations)
+- [Dependencies](#dependencies)
+- [To Do](#to-do)
+- [FAQ](#faq)
+- [Licence](#licence)
+- [Author](#author)
 
 ## Overview
 
 This project includes example scripts for working with MongoDB collections using the MongoDB Node.js Driver. It covers both collection creation (including advanced options like capped and time series collections) and aggregation pipelines written in JavaScript.
-
----
 
 ## Project structure
 
@@ -36,17 +28,19 @@ This project includes example scripts for working with MongoDB collections using
 │   └── *.js
 ```
 
----
-
 ## Installation
 
-Install the MongoDB Node.js Driver if not already installed:
+Install dependencies:
 
 ```bash
-npm install mongodb
+npm install
 ```
 
----
+Copy the example environment file and update it with your connection string:
+
+```bash
+cp .env.example .env
+```
 
 ## Usage
 
@@ -57,8 +51,6 @@ npm install mongodb
 3. Run the script in a MongoDB shell or through a Node.js environment that supports direct MongoDB shell commands.
 
 Refer to the [MongoDB `createCollection()` docs](https://www.mongodb.com/docs/manual/reference/method/db.createCollection/) for further customisation.
-
----
 
 ### Running aggregations
 
@@ -71,22 +63,16 @@ Refer to the [MongoDB `createCollection()` docs](https://www.mongodb.com/docs/ma
 node aggregations/example.js
 ```
 
----
-
 ## Dependencies
 
 - [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native)
 
----
-
 ## To Do
 
-- [ ] Add `.env` support for connection strings
+- [x] Add `.env` support for connection strings
 - [ ] Include example output or test data
 - [ ] Add pipelines for `$facet`, `$graphLookup`, and `$lookup` examples
 - [ ] Add performance profiling notes
-
----
 
 ## FAQ
 
@@ -96,13 +82,9 @@ A: Yes. Update the connection string to use your remote URI.
 **Q: Are the scripts safe to run in production?**
 A: They're educational examples and should be reviewed before any production use.
 
----
-
 ## Licence
 
 MIT © Karl Horning
-
----
 
 ## Author
 

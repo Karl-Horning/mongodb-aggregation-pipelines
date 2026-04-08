@@ -1,0 +1,11 @@
+{
+    "name": "mongodb-aggregation-pipelines",
+    "version": "1.0.0",
+    "description": "Example scripts for working with MongoDB collections and aggregation pipelines using the MongoDB Node.js Driver.",
+    "type": "module",
+    "license": "MIT",
+    "dependencies": {
+        "dotenv": "^16.0.0",
+        "mongodb": "^6.0.0"
+    }
+}
