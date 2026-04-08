@@ -1,9 +1,11 @@
 import "dotenv/config";
 import { MongoClient } from "mongodb";
 
-/*
- * Requires the MongoDB Node.js Driver
- * https://mongodb.github.io/node-mongodb-native
+/**
+ * @fileoverview Counts users who have "ad" as their second tag, using array
+ * index notation to target a specific position in the tags array.
+ *
+ * Pipeline stages: $match, $count
  */
 
 const agg = [

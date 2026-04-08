@@ -1,9 +1,11 @@
 import "dotenv/config";
 import { MongoClient } from "mongodb";
 
-/*
- * Requires the MongoDB Node.js Driver
- * https://mongodb.github.io/node-mongodb-native
+/**
+ * @fileoverview Returns the total count of male and female users in the
+ * `users` collection.
+ *
+ * Pipeline stages: $group
  */
 
 const agg = [

@@ -1,9 +1,11 @@
 import "dotenv/config";
 import { MongoClient } from "mongodb";
 
-/*
- * Requires the MongoDB Node.js Driver
- * https://mongodb.github.io/node-mongodb-native
+/**
+ * @fileoverview Returns company contact details for users whose company is
+ * located in the US.
+ *
+ * Pipeline stages: $match, $project
  */
 
 const agg = [

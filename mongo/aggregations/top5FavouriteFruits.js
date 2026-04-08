@@ -1,9 +1,11 @@
 import "dotenv/config";
 import { MongoClient } from "mongodb";
 
-/*
- * Requires the MongoDB Node.js Driver
- * https://mongodb.github.io/node-mongodb-native
+/**
+ * @fileoverview Returns the top 5 most popular favourite fruits across all
+ * users, sorted by count in descending order.
+ *
+ * Pipeline stages: $group, $sort, $limit
  */
 
 const agg = [

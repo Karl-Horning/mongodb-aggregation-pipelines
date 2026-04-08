@@ -1,9 +1,11 @@
 import "dotenv/config";
 import { MongoClient } from "mongodb";
 
-/*
- * Requires the MongoDB Node.js Driver
- * https://mongodb.github.io/node-mongodb-native
+/**
+ * @fileoverview Returns users who have both "enim" and "id" in their tags
+ * array, using $all to require all specified values to be present.
+ *
+ * Pipeline stages: $match
  */
 
 const agg = [

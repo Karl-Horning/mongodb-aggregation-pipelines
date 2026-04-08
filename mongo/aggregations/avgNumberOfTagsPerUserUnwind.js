@@ -1,9 +1,11 @@
 import "dotenv/config";
 import { MongoClient } from "mongodb";
 
-/*
- * Requires the MongoDB Node.js Driver
- * https://mongodb.github.io/node-mongodb-native
+/**
+ * @fileoverview Calculates the average number of tags per user by unwinding
+ * the tags array and counting entries per document before grouping.
+ *
+ * Pipeline stages: $unwind, $group
  */
 
 const agg = [

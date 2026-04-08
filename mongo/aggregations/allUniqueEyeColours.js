@@ -1,9 +1,10 @@
 import "dotenv/config";
 import { MongoClient } from "mongodb";
 
-/*
- * Requires the MongoDB Node.js Driver
- * https://mongodb.github.io/node-mongodb-native
+/**
+ * @fileoverview Returns all unique eye colours in the `users` collection.
+ *
+ * Pipeline stages: $group
  */
 
 const agg = [

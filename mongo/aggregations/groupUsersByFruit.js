@@ -1,9 +1,11 @@
 import "dotenv/config";
 import { MongoClient } from "mongodb";
 
-/*
- * Requires the MongoDB Node.js Driver
- * https://mongodb.github.io/node-mongodb-native
+/**
+ * @fileoverview Groups users by their favourite fruit, returning each fruit
+ * alongside an array of the users who prefer it.
+ *
+ * Pipeline stages: $group
  */
 
 const agg = [
