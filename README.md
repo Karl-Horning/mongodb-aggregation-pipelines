@@ -26,7 +26,9 @@ The scripts cover a range of pipeline stages — `$match`, `$group`, `$sort`, `$
 
    Update `MONGODB_URI` in `.env` if you're not running MongoDB locally on the default port.
 
-3. Open each script in `mongo/setup/` in MongoDB Compass or the VS Code MongoDB extension and run them in this order:
+3. Connect to your MongoDB instance in MongoDB Compass or the VS Code MongoDB extension using the connection string from your `.env` file.
+
+4. Open each script in `mongo/setup/` and run them in this order:
 
    1. `users-create-collection.mongodb.js`
    2. `users-insertMany.mongodb.js`
@@ -34,6 +36,7 @@ The scripts cover a range of pipeline stages — `$match`, `$group`, `$sort`, `$
    4. `books-insertMany.mongodb.js`
    5. `authors-create-collection.mongodb.js`
    6. `authors-insertMany.mongodb.js`
+
 
 ## Running an aggregation
 
