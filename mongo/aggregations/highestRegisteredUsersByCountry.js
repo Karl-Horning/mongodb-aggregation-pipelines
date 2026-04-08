@@ -1,9 +1,11 @@
 import "dotenv/config";
 import { MongoClient } from "mongodb";
 
-/*
- * Requires the MongoDB Node.js Driver
- * https://mongodb.github.io/node-mongodb-native
+/**
+ * @fileoverview Returns user counts grouped by country, sorted in descending
+ * order to show which countries have the most registered users.
+ *
+ * Pipeline stages: $group, $sort
  */
 
 const agg = [

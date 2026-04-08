@@ -1,3 +1,10 @@
+/**
+ * @fileoverview Seeds the database by running all setup scripts via mongosh
+ * in the correct order.
+ *
+ * Run with: npm run seed
+ */
+
 import "dotenv/config";
 import { execSync } from "child_process";
 

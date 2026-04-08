@@ -1,9 +1,12 @@
 import "dotenv/config";
 import { MongoClient } from "mongodb";
 
-/*
- * Requires the MongoDB Node.js Driver
- * https://mongodb.github.io/node-mongodb-native
+/**
+ * @fileoverview Joins each book in the `books` collection with its author from
+ * the `authors` collection. Uses $first to unwrap the single-element array
+ * returned by $lookup.
+ *
+ * Pipeline stages: $lookup, $addFields
  */
 
 const agg = [

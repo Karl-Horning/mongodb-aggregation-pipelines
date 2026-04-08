@@ -1,9 +1,11 @@
 import "dotenv/config";
 import { MongoClient } from "mongodb";
 
-/*
- * Requires the MongoDB Node.js Driver
- * https://mongodb.github.io/node-mongodb-native
+/**
+ * @fileoverview Counts users whose company phone number starts with +1 (940),
+ * using a regex match on the phone field.
+ *
+ * Pipeline stages: $match, $count
  */
 
 const agg = [

@@ -1,9 +1,11 @@
 import "dotenv/config";
 import { MongoClient } from "mongodb";
 
-/*
- * Requires the MongoDB Node.js Driver
- * https://mongodb.github.io/node-mongodb-native
+/**
+ * @fileoverview Returns the name and age of inactive users who have the
+ * "velit" tag.
+ *
+ * Pipeline stages: $match, $project
  */
 
 const agg = [

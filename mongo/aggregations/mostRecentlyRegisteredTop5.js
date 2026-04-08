@@ -1,9 +1,11 @@
 import "dotenv/config";
 import { MongoClient } from "mongodb";
 
-/*
- * Requires the MongoDB Node.js Driver
- * https://mongodb.github.io/node-mongodb-native
+/**
+ * @fileoverview Returns the 5 most recently registered users, including their
+ * name, registration date, and active status.
+ *
+ * Pipeline stages: $sort, $limit, $project
  */
 
 const agg = [

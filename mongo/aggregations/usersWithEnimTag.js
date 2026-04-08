@@ -1,8 +1,9 @@
 import { MongoClient } from "mongodb";
 
-/*
- * Requires the MongoDB Node.js Driver
- * https://mongodb.github.io/node-mongodb-native
+/**
+ * @fileoverview Counts users who have "enim" in their tags array.
+ *
+ * Pipeline stages: $match, $count
  */
 
 const agg = [
