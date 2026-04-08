@@ -7,8 +7,8 @@ The scripts cover a range of pipeline stages — `$match`, `$group`, `$sort`, `$
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/)
+- [mongosh](https://www.mongodb.com/docs/mongodb-shell/install/)
 - [MongoDB](https://www.mongodb.com/try/download/community) running locally, or a connection string for a remote or Atlas instance
-- [MongoDB for VS Code](https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode) or [MongoDB Compass](https://www.mongodb.com/products/compass) to run the setup scripts
 
 ## Setup
 
@@ -26,17 +26,11 @@ The scripts cover a range of pipeline stages — `$match`, `$group`, `$sort`, `$
 
    Update `MONGODB_URI` in `.env` if you're not running MongoDB locally on the default port.
 
-3. Connect to your MongoDB instance in MongoDB Compass or the VS Code MongoDB extension using the connection string from your `.env` file.
+3. Seed the database:
 
-4. Open each script in `mongo/setup/` and run them in this order:
-
-   1. `users-create-collection.mongodb.js`
-   2. `users-insertMany.mongodb.js`
-   3. `books-create-collection.mongodb.js`
-   4. `books-insertMany.mongodb.js`
-   5. `authors-create-collection.mongodb.js`
-   6. `authors-insertMany.mongodb.js`
-
+   ```bash
+   npm run seed
+   ```
 
 ## Running an aggregation
 
@@ -57,6 +51,8 @@ node mongo/aggregations/avgUserAge.js
 ├── mongo/
 │   ├── aggregations/    # Aggregation pipeline scripts (Node.js Driver)
 │   └── setup/           # Collection creation and seed data (MongoDB Playground)
+├── scripts/
+│   └── seed.js          # Seeds the database via mongosh
 ├── .env.example
 └── package.json
 ```
