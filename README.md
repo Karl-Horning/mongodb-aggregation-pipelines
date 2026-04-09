@@ -1,6 +1,6 @@
 # MongoDB aggregation pipelines
 
-At a previous role, reporting ran against a replica database rather than production. Extracting meaningful stats from it meant writing aggregation pipelines — something I hadn't needed before, having worked primarily with SQL. I built this repo to get comfortable with the syntax and semantics before applying it in a live context.
+I built this repo to learn MongoDB aggregation pipelines. My previous role ran reporting against a replica database, and I needed to get comfortable with the syntax before using it in production. I'd worked primarily with SQL up to that point.
 
 The scripts cover a range of pipeline stages — `$match`, `$group`, `$sort`, `$limit`, `$project`, `$lookup`, `$addFields`, `$unwind`, and `$count` — across a `users` collection and a `books` collection with a related `authors` collection to demonstrate joins via `$lookup`.
 
