@@ -57,6 +57,6 @@ node mongo/aggregations/avgUserAge.js
 └── package.json
 ```
 
-## Licence
+## License
 
-MIT 2024 © [Karl Horning](https://github.com/Karl-Horning)
+Released under the [MIT License](./LICENSE) by [Karl Horning](https://github.com/Karl-Horning).
